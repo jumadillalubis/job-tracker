@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Job Tracker
 
-## Getting Started
+Aplikasi web untuk memantau lamaran magang: tambah, edit, dan hapus lamaran, ubah status, cari dan filter, serta lihat ringkasan lewat kartu dan chart.
 
-First, run the development server:
+**Live demo:** [isi link Vercel]
+
+![Screenshot](./public/screenshot.png)
+
+## Fitur
+
+- CRUD lamaran: tambah, edit (modal), ubah status, dan hapus
+- Pencarian perusahaan/posisi dan filter berdasarkan status
+- Kartu ringkasan dengan persentase per status
+- Bar chart jumlah lamaran per status
+- Nama pengguna bisa diubah langsung dari navbar (tersimpan di browser)
+- REST API route (`GET`, `POST`, `PATCH`, `DELETE`) di `/api/applications`
+
+## Tech Stack
+
+- Next.js (App Router) + TypeScript
+- Tailwind CSS
+- Recharts
+- Deploy di Vercel
+
+## Menjalankan Lokal
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Kredit
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Ikon aplikasi: [Pixel perfect](https://www.flaticon.com/free-icon/employee_2572970?term=job&page=1&position=5&origin=search&related_id=2572970)
 
-## Learn More
+## Catatan
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Data lamaran disimpan di memori server (tanpa database), jadi bisa kembali ke data awal saat server restart. Ini disengaja agar demo ringan dan gratis. Pengembangan berikutnya: menyimpan data ke database (misalnya Supabase) dan menambah autentikasi.
